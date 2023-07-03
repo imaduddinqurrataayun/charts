@@ -255,12 +255,18 @@ resources:
   ## limits:
   ##    cpu: 100m
   ##    memory: 128Mi
-  limits: {}
+  limits: {
+    cpu: 100m
+    memory: 128Mi
+  }
   ## Examples:
   ## requests:
   ##    cpu: 100m
   ##    memory: 128Mi
-  requests: {}
+  requests: {
+    cpu: 100m
+    memory: 128Mi
+  }
 ## NGINX containers' lifecycleHooks
 ## ref: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/
 ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/attach-handler-lifecycle-event/
@@ -529,7 +535,7 @@ staticSitePVC: ""
 service:
   ## @param service.type Service type
   ##
-  type: LoadBalancer
+  type: NodePort
   ## @param service.ports.http Service HTTP port
   ## @param service.ports.https Service HTTPS port
   ##
